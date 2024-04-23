@@ -58,7 +58,7 @@ export const MarkdownRenderer = ({ children }) => (
                             }
                             break
                         default:
-                        // noop
+                            console.error('Found new type of children of `p` node', children)
                     }
 
                     return <p {...props}>{refined_children}</p>
