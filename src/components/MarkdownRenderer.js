@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import { useEffect, useState } from 'react'
 
 const MarkdownStyle = styled.div`
     font-size: 1rem;
@@ -66,3 +67,15 @@ export const MarkdownRenderer = ({ children }) => (
         </ReactMarkdown>
     </MarkdownStyle>
 )
+
+export function MarkdownFileRenderer({ src }) {
+    const [contents, setContents] = useState('')
+
+    useEffect(() => {
+        fetch(src)
+            .then((r) => r.text())
+            .then((text) => setContents(text))
+    }, [src])
+
+    return <MarkdownRenderer>{contents}</MarkdownRenderer>
+}
