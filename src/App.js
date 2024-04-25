@@ -33,7 +33,22 @@ function App() {
                     <MarkdownFileRenderer src={test_md} />
                 </section>
             </main>
-            <footer id='footer'>푸터</footer>
+            <footer id='footer'>
+                <section>
+                    <h2>연락처</h2>
+                    <p>
+                        GitHub Issues:{' '}
+                        <a href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</a>
+                    </p>
+                    <p>
+                        이메일 주소: quiraxical <i>at</i> gmail.com ('at'을 @으로 치환, 공백 제외)
+                    </p>
+                </section>
+                <section>
+                    <button>이메일 무단 수집 거부</button>
+                    <p>&copy; 2024 Quirax Lee. 모든 권리 보유.</p>
+                </section>
+            </footer>
         </>
     )
 }
