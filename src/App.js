@@ -27,6 +27,7 @@ function App() {
                         src={profile_image}
                         alt='킈락의 프로필 이미지'
                     />
+                    <h1>Quirax Lee</h1>
                 </section>
                 <section id='profile'>
                     <MarkdownFileRenderer src={test_md} />
