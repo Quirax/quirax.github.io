@@ -1,5 +1,10 @@
 {
     "profile": "Profile",
     "portfolio": "Portfolio",
-    "project": "Project"
+    "project": "Project",
+    "contact-us": "Contact Us",
+    "email": "Email address",
+    "email-instruction": "replaced 'at' to @, without whitespace",
+    "reject-collect-email": "Rejection of E-mail Collection",
+    "all-rights-reserved": "All rights reserved."
 }

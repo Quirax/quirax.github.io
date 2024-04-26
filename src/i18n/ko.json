@@ -1,5 +1,10 @@
 {
     "profile": "프로필",
     "portfolio": "포트폴리오",
-    "project": "프로젝트"
+    "project": "프로젝트",
+    "contact-us": "연락처",
+    "email": "이메일 주소",
+    "email-instruction": "'at'을 @으로 치환, 공백 제외",
+    "reject-collect-email": "이메일 무단 수집 거부",
+    "all-rights-reserved": "모든 권리 보유."
 }

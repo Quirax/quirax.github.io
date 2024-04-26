@@ -1,5 +1,8 @@
-import './App.css'
+import { useTranslation } from 'react-i18next'
 import { MarkdownFileRenderer } from './components/MarkdownRenderer'
+
+import './App.css'
+
 import test_md from './docs/test.md'
 import profile_image from './profile.jpg'
 
@@ -11,6 +14,8 @@ const ProfileImg = () => (
 )
 
 function App() {
+    const { t } = useTranslation()
+
     return (
         <>
             <header>
@@ -18,9 +23,9 @@ function App() {
                     <a href='#top'>
                         <ProfileImg />
                     </a>
-                    <a href='#profile'>프로필</a>
-                    <a href='#portfolio'>포트폴리오</a>
-                    <a href='#project'>프로젝트</a>
+                    <a href='#profile'>{t('profile')}</a>
+                    <a href='#portfolio'>{t('portfolio')}</a>
+                    <a href='#project'>{t('project')}</a>
                 </div>
                 <div id='right_header'>
                     <button>언어 선택</button>
@@ -33,32 +38,32 @@ function App() {
                     <h1>Quirax Lee</h1>
                 </section>
                 <section id='profile'>
-                    <h2>프로필</h2>
+                    <h2>{t('profile')}</h2>
                     <MarkdownFileRenderer src={test_md} />
                 </section>
                 <section id='portfolio'>
-                    <h2>포트폴리오</h2>
+                    <h2>{t('portfolio')}</h2>
                     <MarkdownFileRenderer src={test_md} />
                 </section>
                 <section id='project'>
-                    <h2>프로젝트</h2>
+                    <h2>{t('project')}</h2>
                     <MarkdownFileRenderer src={test_md} />
                 </section>
             </main>
             <footer>
                 <section>
-                    <h2>연락처</h2>
+                    <h2>{t('contact-us')}</h2>
                     <p>
                         GitHub Issues:{' '}
                         <a href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</a>
                     </p>
                     <p>
-                        이메일 주소: quiraxical <i>at</i> gmail.com ('at'을 @으로 치환, 공백 제외)
+                        {t('email')}: quiraxical <i>at</i> gmail.com ({t('email-instruction')})
                     </p>
                 </section>
                 <section>
-                    <button>이메일 무단 수집 거부</button>
-                    <p>&copy; 2024 Quirax Lee. 모든 권리 보유.</p>
+                    <button>{t('reject-collect-email')}</button>
+                    <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
                 </section>
             </footer>
         </>
