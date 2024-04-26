@@ -14,7 +14,8 @@ function App() {
                     />
                     <a href='#front'>Quirax Lee</a>
                     <a href='#profile'>프로필</a>
-                    <a href='#footer'>푸터</a>
+                    <a href='#portfolio'>포트폴리오</a>
+                    <a href='#project'>프로젝트</a>
                 </div>
                 <div id='right_header'>
                     <button>언어 선택</button>
@@ -30,10 +31,19 @@ function App() {
                     <h1>Quirax Lee</h1>
                 </section>
                 <section id='profile'>
+                    <h2>프로필</h2>
+                    <MarkdownFileRenderer src={test_md} />
+                </section>
+                <section id='portfolio'>
+                    <h2>포트폴리오</h2>
+                    <MarkdownFileRenderer src={test_md} />
+                </section>
+                <section id='project'>
+                    <h2>프로젝트</h2>
                     <MarkdownFileRenderer src={test_md} />
                 </section>
             </main>
-            <footer id='footer'>
+            <footer>
                 <section>
                     <h2>연락처</h2>
                     <p>
