@@ -24,8 +24,8 @@ const BlockQuote = styled.blockquote`
     border: 1px dashed black;
 `
 
-function lf2br(str) {
-    let ret = str.split('\n').flatMap((v, i) => [v, <br key={i} />])
+function lf2br(str, idx = 0) {
+    let ret = str.split('\n').flatMap((v, i) => [v, <br key={idx + i} />])
     ret.pop()
     return ret
 }
@@ -51,12 +51,14 @@ export const MarkdownRenderer = ({ children }) => (
                             break
                         case 'object':
                             if (children instanceof Array) {
-                                refined_children = children.flatMap((v) => (typeof v === 'string' ? lf2br(v) : [v]))
+                                refined_children = children.flatMap((v, i) =>
+                                    typeof v === 'string' ? lf2br(v, i * 10000000) : [v]
+                                )
                                 break
                             }
                             break
                         default:
-                        // noop
+                            console.error('Found new type of children of `p` node', children)
                     }
 
                     return <p {...props}>{refined_children}</p>

@@ -79,10 +79,10 @@ Uses pretrained weights to make predictions on images. Below table displays the 
 poetry run yolo-detect --images data/samples/
 ```
 
-<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/giraffe.png" width="480"\\></p>
-<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/dog.png" width="480"\\></p>
-<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/traffic.png" width="480"\\></p>
-<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/messi.png" width="480"\\></p>
+<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/giraffe.png" width="480"></p>
+<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/dog.png" width="480"></p>
+<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/traffic.png" width="480"></p>
+<p align="center"><img src="https://github.com/eriklindernoren/PyTorch-YOLOv3/raw/master/assets/messi.png" width="480"></p>
 
 ## Train
 For argument descriptions have a look at `poetry run yolo-train --help`
