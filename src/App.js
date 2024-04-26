@@ -3,16 +3,21 @@ import { MarkdownFileRenderer } from './components/MarkdownRenderer'
 import test_md from './docs/test.md'
 import profile_image from './profile.jpg'
 
+const ProfileImg = () => (
+    <img
+        src={profile_image}
+        alt='킈락의 프로필 이미지'
+    />
+)
+
 function App() {
     return (
         <>
             <header>
                 <div id='left_header'>
-                    <img
-                        src={profile_image}
-                        alt='킈락의 프로필 이미지'
-                    />
-                    <a href='#front'>Quirax Lee</a>
+                    <a href='#top'>
+                        <ProfileImg />
+                    </a>
                     <a href='#profile'>프로필</a>
                     <a href='#portfolio'>포트폴리오</a>
                     <a href='#project'>프로젝트</a>
@@ -23,11 +28,8 @@ function App() {
                 </div>
             </header>
             <main>
-                <section id='front'>
-                    <img
-                        src={profile_image}
-                        alt='킈락의 프로필 이미지'
-                    />
+                <section>
+                    <ProfileImg />
                     <h1>Quirax Lee</h1>
                 </section>
                 <section id='profile'>
