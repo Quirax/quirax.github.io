@@ -12,13 +12,23 @@ export function Header({ ...props }) {
                 <a href='#top'>
                     <ProfileImg />
                 </a>
-                <a href='#profile'>{t('profile')}</a>
-                <a href='#portfolio'>{t('portfolio')}</a>
-                <a href='#project'>{t('project')}</a>
+                <a href='#profile'>
+                    <span>{t('profile')}</span>
+                </a>
+                <a href='#portfolio'>
+                    <span>{t('portfolio')}</span>
+                </a>
+                <a href='#project'>
+                    <span>{t('project')}</span>
+                </a>
             </div>
             <div id='right_header'>
-                <button>언어 선택</button>
-                <button>맨 위로</button>
+                <button>
+                    <span>언어 선택</span>
+                </button>
+                <button>
+                    <span>맨 위로</span>
+                </button>
             </div>
         </header>
     )

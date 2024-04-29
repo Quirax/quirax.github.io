@@ -15,7 +15,20 @@ header > div {
 header > div a,
 header > div button {
     height: 100%;
-    line-height: var(--header-height);
+    padding: var(--header-padding);
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    color: inherit;
+    text-align: center;
+    cursor: pointer;
+    background: inherit;
+    padding: 0;
+    border: none;
+    font: inherit;
+    text-decoration: none;
 }
 
 header > div#left_header img {
