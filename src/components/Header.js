@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { ProfileImg } from './ProfileImg'
 
+import './Header.css'
+
 export function Header({ ...props }) {
     const { t } = useTranslation()
 
