@@ -1,37 +1,18 @@
+import test_md from './docs/test.md'
+
 import { useTranslation } from 'react-i18next'
 import { MarkdownFileRenderer } from './components/MarkdownRenderer'
+import { ProfileImg } from './components/ProfileImg'
+import { Header } from './components/Header'
 
 import './App.css'
-
-import test_md from './docs/test.md'
-import profile_image from './profile.jpg'
-
-const ProfileImg = () => (
-    <img
-        src={profile_image}
-        alt='킈락의 프로필 이미지'
-    />
-)
 
 function App() {
     const { t } = useTranslation()
 
     return (
         <>
-            <header>
-                <div id='left_header'>
-                    <a href='#top'>
-                        <ProfileImg />
-                    </a>
-                    <a href='#profile'>{t('profile')}</a>
-                    <a href='#portfolio'>{t('portfolio')}</a>
-                    <a href='#project'>{t('project')}</a>
-                </div>
-                <div id='right_header'>
-                    <button>언어 선택</button>
-                    <button>맨 위로</button>
-                </div>
-            </header>
+            <Header />
             <main>
                 <section>
                     <ProfileImg />
