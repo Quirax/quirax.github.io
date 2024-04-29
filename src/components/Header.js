@@ -26,9 +26,9 @@ export function Header({ ...props }) {
                 <button>
                     <span>언어 선택</span>
                 </button>
-                <button>
+                <a href='#top'>
                     <span>맨 위로</span>
-                </button>
+                </a>
             </div>
         </header>
     )
