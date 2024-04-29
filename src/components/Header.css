@@ -6,6 +6,7 @@ header {
     position: fixed;
     width: 100%;
     background-color: var(--header-background);
+    color: var(--header-color);
 }
 
 header > div {
@@ -28,7 +29,6 @@ header > div button {
     text-align: center;
     cursor: pointer;
     background: inherit;
-    padding: 0;
     border: none;
     font: inherit;
     text-decoration: none;
@@ -37,6 +37,14 @@ header > div button {
 header > div a:not(:first-child),
 header > div button {
     width: var(--header-button-width);
+}
+
+header > div a:not(:first-child):hover,
+header > div a:not(:first-child):active,
+header > div button:hover,
+header > div button:active {
+    background: var(--header-active-background);
+    color: var(--header-color-background);
 }
 
 header > div#left_header img {
