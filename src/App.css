@@ -2,4 +2,5 @@
     --header-height: 64px;
     --header-padding: 8px;
     --header-button-width: 128px;
+    --header-background: white; /* TODO: set to appropriate value */
 }
