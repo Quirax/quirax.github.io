@@ -10,6 +10,12 @@
             "name": "Chrome Debug Session",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Launch",
+            "command": "npm start"
         }
     ]
 }
