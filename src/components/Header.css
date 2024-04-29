@@ -31,6 +31,11 @@ header > div button {
     text-decoration: none;
 }
 
+header > div a:not(:first-child),
+header > div button {
+    width: var(--header-button-width);
+}
+
 header > div#left_header img {
     height: 100%;
 }
