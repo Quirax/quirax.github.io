@@ -34,7 +34,8 @@ header > div button {
     text-decoration: none;
 }
 
-header > div a:not(:first-child),
+header > div#left_header a:not(:first-child),
+header > div#right_header a:not(:last-child),
 header > div button {
     width: var(--header-button-width);
 }
@@ -45,6 +46,10 @@ header > div button:hover,
 header > div button:active {
     background: var(--header-active-background);
     color: var(--header-color-background);
+}
+
+header > div#right_header a:last-child {
+    width: var(--header-height);
 }
 
 header > div#left_header img {

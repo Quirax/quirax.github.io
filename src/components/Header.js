@@ -27,7 +27,9 @@ export function Header({ ...props }) {
                     <span>언어 선택</span>
                 </button>
                 <a href='#top'>
-                    <span>맨 위로</span>
+                    <span>
+                        <span class='material-icons'>keyboard_double_arrow_up</span>
+                    </span>
                 </a>
             </div>
         </header>
