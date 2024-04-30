@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import profile_image from '../profile.jpg'
+import profile_image from '../profile.png'
 
 export function ProfileImg() {
     const { t } = useTranslation()
