@@ -28,7 +28,7 @@ export function Header({ ...props }) {
                 </button>
                 <a href='#top'>
                     <span>
-                        <span class='material-icons'>keyboard_double_arrow_up</span>
+                        <span className='material-icons'>keyboard_double_arrow_up</span>
                     </span>
                 </a>
             </div>
