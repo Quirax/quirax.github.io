@@ -2,8 +2,9 @@
     --header-height: 64px;
     --header-padding: 8px;
     --header-button-width: 128px;
-    --header-background: #004087; /* TODO: set to appropriate value */
-    --header-active-background: #0499f5; /* TODO: set to appropriate value */
-    --header-color: white; /* TODO: set to appropriate value */
-    --header-color-background: black; /* TODO: set to appropriate value */
+    --header-background: #004087;
+    --header-active-background: #0499f5;
+    --header-color: white;
+    --header-active-color: black;
+    --header-button-font-size: 20px;
 }

@@ -38,6 +38,7 @@ header > div#left_header a:not(:first-child),
 header > div#right_header a:not(:last-child),
 header > div button {
     width: var(--header-button-width);
+    font-size: var(--header-button-font-size);
 }
 
 header > div a:not(:first-child):hover,
@@ -45,7 +46,7 @@ header > div a:not(:first-child):active,
 header > div button:hover,
 header > div button:active {
     background: var(--header-active-background);
-    color: var(--header-color-background);
+    color: var(--header-active-color);
 }
 
 header > div#right_header a:last-child {
