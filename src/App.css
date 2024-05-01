@@ -8,3 +8,9 @@
     --header-active-color: black;
     --header-button-font-size: 20px;
 }
+
+@media screen and (max-width: 660px) {
+    :root {
+        --header-button-width: var(--header-height);
+    }
+}

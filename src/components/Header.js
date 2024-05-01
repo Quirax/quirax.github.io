@@ -9,6 +9,9 @@ export function Header({ ...props }) {
     return (
         <header>
             <div id='left_header'>
+                <button>
+                    <span className='material-icons'>menu</span>
+                </button>
                 <a href='#top'>
                     <ProfileImg />
                 </a>
