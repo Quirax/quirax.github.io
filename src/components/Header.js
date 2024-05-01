@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import { ProfileImg } from './ProfileImg'
 
@@ -19,6 +19,16 @@ const Div = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+`
+
+const LeftMenus = styled(Div)`
+    @media screen and (max-width: 660px) {
+        position: fixed;
+        top: var(--header-height);
+        height: unset;
+        flex-direction: column;
+        width: 100%;
+    }
 `
 
 const Button = styled.button`
@@ -65,9 +75,15 @@ const Link = styled(A)`
         background: var(--header-active-background);
         color: var(--header-active-color);
     }
+
+    @media screen and (max-width: 660px) {
+        width: 100%;
+        background: var(--header-background);
+        justify-content: flex-start;
+    }
 `
 
-const MenuButton = styled(Button)`
+const LanguageButton = styled(Button)`
     width: var(--header-button-width);
     font-size: var(--header-button-font-size);
 
@@ -77,32 +93,42 @@ const MenuButton = styled(Button)`
     }
 `
 
+const MenuButton = styled(Button)`
+    display: none;
+
+    @media screen and (max-width: 660px) {
+        display: inline-flex;
+    }
+`
+
 export function Header({ ...props }) {
     const { t } = useTranslation()
 
     return (
         <StyledHeader>
-            <Div id='left_header'>
-                <Button>
+            <Div>
+                <MenuButton>
                     <span className='material-icons'>menu</span>
-                </Button>
+                </MenuButton>
                 <A href='#top'>
                     <ProfileImg />
                 </A>
-                <Link href='#profile'>
-                    <span>{t('profile')}</span>
-                </Link>
-                <Link href='#portfolio'>
-                    <span>{t('portfolio')}</span>
-                </Link>
-                <Link href='#project'>
-                    <span>{t('project')}</span>
-                </Link>
+                <LeftMenus>
+                    <Link href='#profile'>
+                        <span>{t('profile')}</span>
+                    </Link>
+                    <Link href='#portfolio'>
+                        <span>{t('portfolio')}</span>
+                    </Link>
+                    <Link href='#project'>
+                        <span>{t('project')}</span>
+                    </Link>
+                </LeftMenus>
             </Div>
-            <Div id='right_header'>
-                <MenuButton>
+            <Div>
+                <LanguageButton>
                     <span>언어 선택</span>
-                </MenuButton>
+                </LanguageButton>
                 <A href='#top'>
                     <span className='material-icons'>keyboard_double_arrow_up</span>
                 </A>

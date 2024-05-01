@@ -4,14 +4,27 @@ import { useTranslation } from 'react-i18next'
 import { MarkdownFileRenderer } from './components/MarkdownRenderer'
 import { ProfileImg } from './components/ProfileImg'
 import { Header } from './components/Header'
+import { createGlobalStyle } from 'styled-components'
 
-import './App.css'
+const GlobalStyle = createGlobalStyle`
+    :root {
+        --header-height: 64px;
+        --header-padding: 8px;
+        --header-button-width: 128px;
+        --header-background: #004087;
+        --header-active-background: #0499f5;
+        --header-color: white;
+        --header-active-color: black;
+        --header-button-font-size: 20px;
+    }
+`
 
 function App() {
     const { t } = useTranslation()
 
     return (
         <>
+            <GlobalStyle />
             <Header />
             <main>
                 <section>
