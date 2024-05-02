@@ -12,7 +12,7 @@ export function ProfileImg() {
     return (
         <Img
             src={profile_image}
-            alt='킈락의 프로필 이미지'
+            alt={t('profile-img')}
         />
     )
 }
