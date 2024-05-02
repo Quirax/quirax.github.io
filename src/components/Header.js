@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 
 import { ProfileImg } from './ProfileImg'
 
@@ -28,6 +29,7 @@ const LeftMenus = styled(Div)`
         height: unset;
         flex-direction: column;
         width: 100%;
+        display: ${({ open }) => (open ? 'flex' : 'none')};
     }
 `
 
@@ -104,16 +106,40 @@ const MenuButton = styled(Button)`
 export function Header({ ...props }) {
     const { t } = useTranslation()
 
+    const [showMenus, setShowMenus] = useState(false)
+
+    useEffect(() => {
+        const onClickWindow = (e) => {
+            // if (e.defaultPrevented) return
+            setShowMenus(false)
+        }
+
+        const onResize = () => setShowMenus(false)
+
+        window.addEventListener('click', onClickWindow)
+        window.addEventListener('resize', onResize)
+
+        return () => {
+            window.removeEventListener('click', onClickWindow)
+            window.removeEventListener('resize', onResize)
+        }
+    }, [])
+
+    const onClickMenuButton = (e) => {
+        e.stopPropagation()
+        setShowMenus((t) => !t)
+    }
+
     return (
         <StyledHeader>
             <Div>
-                <MenuButton>
+                <MenuButton onClick={onClickMenuButton}>
                     <span className='material-icons'>menu</span>
                 </MenuButton>
                 <A href='#top'>
                     <ProfileImg />
                 </A>
-                <LeftMenus>
+                <LeftMenus open={showMenus}>
                     <Link href='#profile'>
                         <span>{t('profile')}</span>
                     </Link>
