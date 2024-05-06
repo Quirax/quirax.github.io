@@ -71,14 +71,18 @@ export function Header({ ...props }) {
     const { t } = useTranslation()
 
     const [showMenus, setShowMenus] = useState(false)
+    const [showLanguageSelector, setShowLanguageSelector] = useState(false)
 
     useEffect(() => {
-        const onClickWindow = (e) => {
-            // if (e.defaultPrevented) return
+        const onClickWindow = () => {
             setShowMenus(false)
+            setShowLanguageSelector(false)
         }
 
-        const onResize = () => setShowMenus(false)
+        const onResize = () => {
+            setShowMenus(false)
+            setShowLanguageSelector(false)
+        }
 
         window.addEventListener('click', onClickWindow)
         window.addEventListener('resize', onResize)
@@ -91,7 +95,14 @@ export function Header({ ...props }) {
 
     const onClickMenuButton = (e) => {
         e.stopPropagation()
+        setShowLanguageSelector(false)
         setShowMenus((t) => !t)
+    }
+
+    const onClickLanguageSelectButton = (e) => {
+        e.stopPropagation()
+        setShowMenus(false)
+        setShowLanguageSelector((t) => !t)
     }
 
     return (
@@ -116,8 +127,8 @@ export function Header({ ...props }) {
                 </LeftMenus>
             </Div>
             <Div>
-                <LanguageSelector />
-                <LanguageButton>
+                {showLanguageSelector && <LanguageSelector />}
+                <LanguageButton onClick={onClickLanguageSelectButton}>
                     <span>{t('language-select')}</span>
                 </LanguageButton>
                 <A href='#top'>

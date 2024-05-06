@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
         --modal-padding: 4px;
         --modal-radius: 4px;
         --modal-border-width: 1px;
-        --modal-border: var(--modal-border-width) solid black;
+        --modal-border: var(--modal-border-width) solid #004087;
         --modal-color: white;
         --modal-active-color: black;
         --modal-background: #004087;
