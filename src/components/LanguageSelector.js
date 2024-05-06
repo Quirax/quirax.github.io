@@ -29,6 +29,13 @@ const Modal = styled.div`
 const Button = styled(InlinedButton)`
     display: flex;
     width: var(--modal-button-width);
+
+    font-size: var(--modal-button-font-size);
+
+    &:hover, &:active {
+        background: var(--modal-active-background);
+        color: var(--modal-active-color);
+    }
 `
 
 const languageSelectorStyle = {

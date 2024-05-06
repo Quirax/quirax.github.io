@@ -18,15 +18,18 @@ const GlobalStyle = createGlobalStyle`
         --header-button-font-size: 20px;
 
         --modal-arrow-size: 8px;
-        --modal-arrow-color: black;
+        --modal-arrow-color: #004087;
         --modal-margin: 4px;
         --modal-padding: 4px;
         --modal-radius: 4px;
         --modal-border-width: 1px;
         --modal-border: var(--modal-border-width) solid black;
-        --modal-color: black;
-        --modal-background: white;
+        --modal-color: white;
+        --modal-active-color: black;
+        --modal-background: #004087;
+        --modal-active-background: #0499f5;
         --modal-button-width: 128px;
+        --modal-button-font-size: 16px;
     }
 `
 
