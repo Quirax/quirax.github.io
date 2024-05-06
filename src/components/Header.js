@@ -52,7 +52,7 @@ const Link = styled(A)`
 
     @media screen and (max-width: 660px) {
         width: 100%;
-        background: var(--header-background);
+        background: var(--left-menu-background);
         justify-content: flex-start;
     }
 `
