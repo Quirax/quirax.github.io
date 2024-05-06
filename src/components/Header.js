@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { ProfileImg } from './ProfileImg'
+import { MaterialIcon, InlinedButton as Button, buttonStyle } from './common'
+import { LanguageSelector } from './LanguageSelector'
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -33,43 +35,9 @@ const LeftMenus = styled(Div)`
     }
 `
 
-const Button = styled.button`
-    height: 100%;
-    padding: var(--header-padding);
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    appearance: none;
-    color: inherit;
-    text-align: center;
-    cursor: pointer;
-    background: inherit;
-    border: none;
-    font: inherit;
-    text-decoration: none;
-    width: var(--header-height);
-`
+const A = styled.a(buttonStyle)
 
-const A = styled.a`
-    height: 100%;
-    padding: var(--header-padding);
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    appearance: none;
-    color: inherit;
-    text-align: center;
-    cursor: pointer;
-    background: inherit;
-    border: none;
-    font: inherit;
-    text-decoration: none;
-    width: var(--header-height);
-`
-
-const Link = styled(A)`
+const interactiveStyle = css`
     width: var(--header-button-width);
     font-size: var(--header-button-font-size);
 
@@ -77,23 +45,19 @@ const Link = styled(A)`
         background: var(--header-active-background);
         color: var(--header-active-color);
     }
+`
+
+const Link = styled(A)`
+    ${interactiveStyle}
 
     @media screen and (max-width: 660px) {
         width: 100%;
-        background: var(--header-background);
+        background: var(--left-menu-background);
         justify-content: flex-start;
     }
 `
 
-const LanguageButton = styled(Button)`
-    width: var(--header-button-width);
-    font-size: var(--header-button-font-size);
-
-    &:hover, &:active {
-        background: var(--header-active-background);
-        color: var(--header-active-color);
-    }
-`
+const LanguageButton = styled(Button)(interactiveStyle)
 
 const MenuButton = styled(Button)`
     display: none;
@@ -107,14 +71,18 @@ export function Header({ ...props }) {
     const { t } = useTranslation()
 
     const [showMenus, setShowMenus] = useState(false)
+    const [showLanguageSelector, setShowLanguageSelector] = useState(false)
 
     useEffect(() => {
-        const onClickWindow = (e) => {
-            // if (e.defaultPrevented) return
+        const onClickWindow = () => {
             setShowMenus(false)
+            setShowLanguageSelector(false)
         }
 
-        const onResize = () => setShowMenus(false)
+        const onResize = () => {
+            setShowMenus(false)
+            setShowLanguageSelector(false)
+        }
 
         window.addEventListener('click', onClickWindow)
         window.addEventListener('resize', onResize)
@@ -127,14 +95,21 @@ export function Header({ ...props }) {
 
     const onClickMenuButton = (e) => {
         e.stopPropagation()
+        setShowLanguageSelector(false)
         setShowMenus((t) => !t)
     }
 
+    const onClickLanguageSelectButton = (e) => {
+        e.stopPropagation()
+        setShowMenus(false)
+        setShowLanguageSelector((t) => !t)
+    }
+
     return (
-        <StyledHeader>
+        <StyledHeader {...props}>
             <Div>
                 <MenuButton onClick={onClickMenuButton}>
-                    <span className='material-icons'>menu</span>
+                    <MaterialIcon>menu</MaterialIcon>
                 </MenuButton>
                 <A href='#top'>
                     <ProfileImg />
@@ -152,11 +127,12 @@ export function Header({ ...props }) {
                 </LeftMenus>
             </Div>
             <Div>
-                <LanguageButton>
-                    <span>언어 선택</span>
+                <LanguageSelector open={showLanguageSelector} />
+                <LanguageButton onClick={onClickLanguageSelectButton}>
+                    <span>{t('language-select')}</span>
                 </LanguageButton>
                 <A href='#top'>
-                    <span className='material-icons'>keyboard_double_arrow_up</span>
+                    <MaterialIcon>keyboard_double_arrow_up</MaterialIcon>
                 </A>
             </Div>
         </StyledHeader>

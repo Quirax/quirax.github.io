@@ -7,5 +7,6 @@
     "email-instruction": "'at'을 @으로 치환, 공백 제외",
     "reject-collect-email": "이메일 무단 수집 거부",
     "all-rights-reserved": "모든 권리 보유.",
-    "profile-img": "킈락의 프로필 이미지"
+    "profile-img": "킈락의 프로필 이미지",
+    "language-select": "언어 선택"
 }
