@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { ProfileImg } from './ProfileImg'
+import { MaterialIcon } from './common'
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -33,7 +34,7 @@ const LeftMenus = styled(Div)`
     }
 `
 
-const Button = styled.button`
+const buttonStyle = css`
     height: 100%;
     padding: var(--header-padding);
     box-sizing: border-box;
@@ -51,25 +52,11 @@ const Button = styled.button`
     width: var(--header-height);
 `
 
-const A = styled.a`
-    height: 100%;
-    padding: var(--header-padding);
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    appearance: none;
-    color: inherit;
-    text-align: center;
-    cursor: pointer;
-    background: inherit;
-    border: none;
-    font: inherit;
-    text-decoration: none;
-    width: var(--header-height);
-`
+const Button = styled.button(buttonStyle)
 
-const Link = styled(A)`
+const A = styled.a(buttonStyle)
+
+const interactiveStyle = css`
     width: var(--header-button-width);
     font-size: var(--header-button-font-size);
 
@@ -77,6 +64,10 @@ const Link = styled(A)`
         background: var(--header-active-background);
         color: var(--header-active-color);
     }
+`
+
+const Link = styled(A)`
+    ${interactiveStyle}
 
     @media screen and (max-width: 660px) {
         width: 100%;
@@ -85,15 +76,7 @@ const Link = styled(A)`
     }
 `
 
-const LanguageButton = styled(Button)`
-    width: var(--header-button-width);
-    font-size: var(--header-button-font-size);
-
-    &:hover, &:active {
-        background: var(--header-active-background);
-        color: var(--header-active-color);
-    }
-`
+const LanguageButton = styled(Button)(interactiveStyle)
 
 const MenuButton = styled(Button)`
     display: none;
@@ -131,10 +114,10 @@ export function Header({ ...props }) {
     }
 
     return (
-        <StyledHeader>
+        <StyledHeader {...props}>
             <Div>
                 <MenuButton onClick={onClickMenuButton}>
-                    <span className='material-icons'>menu</span>
+                    <MaterialIcon>menu</MaterialIcon>
                 </MenuButton>
                 <A href='#top'>
                     <ProfileImg />
@@ -156,7 +139,7 @@ export function Header({ ...props }) {
                     <span>언어 선택</span>
                 </LanguageButton>
                 <A href='#top'>
-                    <span className='material-icons'>keyboard_double_arrow_up</span>
+                    <MaterialIcon>keyboard_double_arrow_up</MaterialIcon>
                 </A>
             </Div>
         </StyledHeader>
