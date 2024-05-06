@@ -127,7 +127,7 @@ export function Header({ ...props }) {
                 </LeftMenus>
             </Div>
             <Div>
-                {showLanguageSelector && <LanguageSelector />}
+                <LanguageSelector open={showLanguageSelector} />
                 <LanguageButton onClick={onClickLanguageSelectButton}>
                     <span>{t('language-select')}</span>
                 </LanguageButton>

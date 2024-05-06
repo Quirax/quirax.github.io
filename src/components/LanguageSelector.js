@@ -3,14 +3,16 @@ import { InlinedButton } from './common'
 import { withTranslation } from 'react-i18next'
 import { useCallback } from 'react'
 
-const Modal = styled.div`
+const Modal = styled.dialog`
     position: fixed;
     color: var(--modal-color);
+    margin: 0;
     margin-top: calc(var(--modal-arrow-size) + var(--modal-margin));
     border: var(--modal-border);
     border-radius: var(--modal-radius);
     padding: var(--modal-padding);
     background: var(--modal-background);
+    inset-inline: auto;
 
     &::before {
         content: '';
@@ -48,7 +50,7 @@ const languageList = Object.freeze({
     en: 'English',
 })
 
-export const LanguageSelector = withTranslation()(({ i18n }) => {
+export const LanguageSelector = withTranslation()(({ i18n, open }) => {
     const onSelectLanguage = useCallback(
         (language) => {
             i18n.changeLanguage(language)
@@ -57,7 +59,9 @@ export const LanguageSelector = withTranslation()(({ i18n }) => {
     )
 
     return (
-        <Modal style={languageSelectorStyle}>
+        <Modal
+            style={languageSelectorStyle}
+            open={open}>
             {Object.entries(languageList).map(([code, desc], i) => (
                 <Button
                     key={`language-${i}`}
