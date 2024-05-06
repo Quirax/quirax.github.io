@@ -16,6 +16,13 @@ const GlobalStyle = createGlobalStyle`
         --header-color: white;
         --header-active-color: black;
         --header-button-font-size: 20px;
+
+        --modal-arrow-size: 8px;
+        --modal-arrow-color: black;
+        --modal-margin: 4px;
+        --modal-padding: 4px;
+        --modal-radius: 4px;
+        --modal-border: 1px solid black;
     }
 `
 

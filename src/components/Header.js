@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { ProfileImg } from './ProfileImg'
 import { MaterialIcon } from './common'
+import { LanguageSelector } from './LanguageSelector'
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -137,6 +138,7 @@ export function Header({ ...props }) {
             <Div>
                 <LanguageButton>
                     <span>언어 선택</span>
+                    <LanguageSelector />
                 </LanguageButton>
                 <A href='#top'>
                     <MaterialIcon>keyboard_double_arrow_up</MaterialIcon>
