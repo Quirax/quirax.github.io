@@ -7,5 +7,6 @@
     "email-instruction": "replaced 'at' to @, without whitespace",
     "reject-collect-email": "Rejection of E-mail Collection",
     "all-rights-reserved": "All rights reserved.",
-    "profile-img": "A profile image of Quirax"
+    "profile-img": "A profile image of Quirax",
+    "language-select": "Language"
 }

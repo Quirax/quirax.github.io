@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { InlinedButton } from './common'
+import { withTranslation } from 'react-i18next'
+import { useCallback } from 'react'
 
 const Modal = styled.div`
     position: fixed;
@@ -34,11 +36,18 @@ const languageSelectorStyle = {
     right: 'calc(var(--header-height) + ((var(--header-button-width) - var(--modal-button-width)) / 2) - (var(--modal-padding) + var(--modal-border-width)))',
 }
 
-export function LanguageSelector() {
+export const LanguageSelector = withTranslation()(({ i18n }) => {
+    const onSelectLanguage = useCallback(
+        (language) => {
+            i18n.changeLanguage(language)
+        },
+        [i18n]
+    )
+
     return (
         <Modal style={languageSelectorStyle}>
-            <Button>한국어</Button>
-            <Button>English</Button>
+            <Button onClick={() => onSelectLanguage('ko')}>한국어</Button>
+            <Button onClick={() => onSelectLanguage('en')}>English</Button>
         </Modal>
     )
-}
+})

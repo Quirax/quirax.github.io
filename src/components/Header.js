@@ -118,7 +118,7 @@ export function Header({ ...props }) {
             <Div>
                 <LanguageSelector />
                 <LanguageButton>
-                    <span>언어 선택</span>
+                    <span>{t('language-select')}</span>
                 </LanguageButton>
                 <A href='#top'>
                     <MaterialIcon>keyboard_double_arrow_up</MaterialIcon>
