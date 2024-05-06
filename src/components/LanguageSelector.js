@@ -1,13 +1,14 @@
 import styled from 'styled-components'
+import { InlinedButton } from './common'
 
 const Modal = styled.div`
     position: fixed;
-    top: var(--header-height);
-    color: black;
+    color: var(--modal-color);
     margin-top: calc(var(--modal-arrow-size) + var(--modal-margin));
     border: var(--modal-border);
     border-radius: var(--modal-radius);
     padding: var(--modal-padding);
+    background: var(--modal-background);
 
     &::before {
         content: '';
@@ -23,6 +24,21 @@ const Modal = styled.div`
     }
 `
 
+const Button = styled(InlinedButton)`
+    display: flex;
+    width: var(--modal-button-width);
+`
+
+const languageSelectorStyle = {
+    top: 'var(--header-height)',
+    right: 'calc(var(--header-height) + ((var(--header-button-width) - var(--modal-button-width)) / 2) - (var(--modal-padding) + var(--modal-border-width)))',
+}
+
 export function LanguageSelector() {
-    return <Modal>한국어, English</Modal>
+    return (
+        <Modal style={languageSelectorStyle}>
+            <Button>한국어</Button>
+            <Button>English</Button>
+        </Modal>
+    )
 }

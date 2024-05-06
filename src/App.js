@@ -22,7 +22,11 @@ const GlobalStyle = createGlobalStyle`
         --modal-margin: 4px;
         --modal-padding: 4px;
         --modal-radius: 4px;
-        --modal-border: 1px solid black;
+        --modal-border-width: 1px;
+        --modal-border: var(--modal-border-width) solid black;
+        --modal-color: black;
+        --modal-background: white;
+        --modal-button-width: 128px;
     }
 `
 

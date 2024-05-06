@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import styled, { css } from 'styled-components'
 
 import { ProfileImg } from './ProfileImg'
-import { MaterialIcon } from './common'
+import { MaterialIcon, InlinedButton as Button, buttonStyle } from './common'
 import { LanguageSelector } from './LanguageSelector'
 
 const StyledHeader = styled.header`
@@ -34,26 +34,6 @@ const LeftMenus = styled(Div)`
         display: ${({ open }) => (open ? 'flex' : 'none')};
     }
 `
-
-const buttonStyle = css`
-    height: 100%;
-    padding: var(--header-padding);
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    appearance: none;
-    color: inherit;
-    text-align: center;
-    cursor: pointer;
-    background: inherit;
-    border: none;
-    font: inherit;
-    text-decoration: none;
-    width: var(--header-height);
-`
-
-const Button = styled.button(buttonStyle)
 
 const A = styled.a(buttonStyle)
 
@@ -136,9 +116,9 @@ export function Header({ ...props }) {
                 </LeftMenus>
             </Div>
             <Div>
+                <LanguageSelector />
                 <LanguageButton>
                     <span>언어 선택</span>
-                    <LanguageSelector />
                 </LanguageButton>
                 <A href='#top'>
                     <MaterialIcon>keyboard_double_arrow_up</MaterialIcon>
