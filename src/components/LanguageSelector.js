@@ -36,6 +36,11 @@ const languageSelectorStyle = {
     right: 'calc(var(--header-height) + ((var(--header-button-width) - var(--modal-button-width)) / 2) - (var(--modal-padding) + var(--modal-border-width)))',
 }
 
+const languageList = Object.freeze({
+    ko: '한국어',
+    en: 'English',
+})
+
 export const LanguageSelector = withTranslation()(({ i18n }) => {
     const onSelectLanguage = useCallback(
         (language) => {
@@ -46,8 +51,13 @@ export const LanguageSelector = withTranslation()(({ i18n }) => {
 
     return (
         <Modal style={languageSelectorStyle}>
-            <Button onClick={() => onSelectLanguage('ko')}>한국어</Button>
-            <Button onClick={() => onSelectLanguage('en')}>English</Button>
+            {Object.entries(languageList).map(([code, desc], i) => (
+                <Button
+                    key={`language-${i}`}
+                    onClick={() => onSelectLanguage(code)}>
+                    {desc}
+                </Button>
+            ))}
         </Modal>
     )
 })
