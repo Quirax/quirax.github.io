@@ -5,6 +5,7 @@ import { MarkdownFileRenderer } from './components/MarkdownRenderer'
 import { ProfileImg } from './components/ProfileImg'
 import { Header } from './components/Header'
 import { createGlobalStyle } from 'styled-components'
+import { FrontSection } from './components/FrontSection'
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -31,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
         --modal-active-background: #0499f5;
         --modal-button-width: 128px;
         --modal-button-font-size: 16px;
+
+        --front-background: #004087;
+        --front-color: white;
+        --front-font-size: 32px;
     }
 `
 
@@ -42,10 +47,7 @@ function App() {
             <GlobalStyle />
             <Header />
             <main>
-                <section>
-                    <ProfileImg />
-                    <h1>Quirax Lee</h1>
-                </section>
+                <FrontSection />
                 <section id='profile'>
                     <h2>{t('profile')}</h2>
                     <MarkdownFileRenderer src={test_md} />
