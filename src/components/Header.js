@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components'
 import { ProfileImg } from './ProfileImg'
 import { MaterialIcon, InlinedButton as Button, buttonStyle } from './common'
 import { LanguageSelector } from './LanguageSelector'
+import { headerHeight } from '../App'
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -15,6 +16,12 @@ const StyledHeader = styled.header`
     width: 100%;
     background: var(--header-background);
     color: var(--header-color);
+    top: calc(var(--header-height) * -1);
+    transition: top 500ms;
+
+    &[open] {
+        top: 0;
+    }
 `
 
 const Div = styled.div`
@@ -67,9 +74,10 @@ const MenuButton = styled(Button)`
     }
 `
 
-export function Header({ ...props }) {
+export function Header({ profileSection, ...props }) {
     const { t } = useTranslation()
 
+    const [showHeader, setShowHeader] = useState(false)
     const [showMenus, setShowMenus] = useState(false)
     const [showLanguageSelector, setShowLanguageSelector] = useState(false)
 
@@ -84,14 +92,32 @@ export function Header({ ...props }) {
             setShowLanguageSelector(false)
         }
 
+        const onScroll = () => {
+            if (!profileSection.current) {
+                setShowHeader(false)
+                onClickWindow()
+                return
+            }
+
+            let newShowHeader = profileSection.current.getBoundingClientRect().top - headerHeight <= 0
+
+            if (newShowHeader !== showHeader) onClickWindow()
+            setShowHeader(newShowHeader)
+        }
+
         window.addEventListener('click', onClickWindow)
         window.addEventListener('resize', onResize)
+        window.addEventListener('scroll', onScroll)
+
+        onClickWindow()
+        onScroll()
 
         return () => {
             window.removeEventListener('click', onClickWindow)
             window.removeEventListener('resize', onResize)
+            window.removeEventListener('scroll', onScroll)
         }
-    }, [])
+    }, [profileSection, showHeader])
 
     const onClickMenuButton = (e) => {
         e.stopPropagation()
@@ -106,7 +132,9 @@ export function Header({ ...props }) {
     }
 
     return (
-        <StyledHeader {...props}>
+        <StyledHeader
+            open={showHeader}
+            {...props}>
             <Div>
                 <MenuButton onClick={onClickMenuButton}>
                     <MaterialIcon>menu</MaterialIcon>

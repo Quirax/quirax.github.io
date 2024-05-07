@@ -2,14 +2,16 @@ import test_md from './docs/test.md'
 
 import { useTranslation } from 'react-i18next'
 import { MarkdownFileRenderer } from './components/MarkdownRenderer'
-import { ProfileImg } from './components/ProfileImg'
 import { Header } from './components/Header'
 import { createGlobalStyle } from 'styled-components'
 import { FrontSection } from './components/FrontSection'
+import { useRef } from 'react'
+
+export const headerHeight = 64
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --header-height: 64px;
+        --header-height: ${headerHeight}px;
         --header-padding: 8px;
         --header-button-width: 128px;
         --header-background: #004087;
@@ -40,15 +42,19 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
+    const profileSection = useRef()
+
     const { t } = useTranslation()
 
     return (
         <>
             <GlobalStyle />
-            <Header />
+            <Header profileSection={profileSection} />
             <main>
                 <FrontSection />
-                <section id='profile'>
+                <section
+                    id='profile'
+                    ref={profileSection}>
                     <h2>{t('profile')}</h2>
                     <MarkdownFileRenderer src={test_md} />
                 </section>
