@@ -85,7 +85,8 @@ function App() {
                         Profile image &copy; 2020{' '}
                         <a
                             href='https://twitter.com/Kim_Zoooin'
-                            target='_blank'>
+                            target='_blank'
+                            rel='noreferrer noopener'>
                             Kim Zooin
                         </a>
                         .
