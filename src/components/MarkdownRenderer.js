@@ -17,6 +17,10 @@ const Pre = styled.pre`
     padding: 2rem;
     line-height: 1.5rem;
     margin: 2rem auto;
+
+    /* text wrapping: https://stackoverflow.com/questions/248011 */
+    white-space: pre-wrap;
+    word-wrap: break-word;
 `
 
 const BlockQuote = styled.blockquote`

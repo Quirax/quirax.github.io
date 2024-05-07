@@ -2,13 +2,16 @@ import test_md from './docs/test.md'
 
 import { useTranslation } from 'react-i18next'
 import { MarkdownFileRenderer } from './components/MarkdownRenderer'
-import { ProfileImg } from './components/ProfileImg'
 import { Header } from './components/Header'
 import { createGlobalStyle } from 'styled-components'
+import { FrontSection } from './components/FrontSection'
+import { useRef } from 'react'
+
+export const headerHeight = 64
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --header-height: 64px;
+        --header-height: ${headerHeight}px;
         --header-padding: 8px;
         --header-button-width: 128px;
         --header-background: #004087;
@@ -31,22 +34,27 @@ const GlobalStyle = createGlobalStyle`
         --modal-active-background: #0499f5;
         --modal-button-width: 128px;
         --modal-button-font-size: 16px;
+
+        --front-background: #004087;
+        --front-color: white;
+        --front-font-size: 32px;
     }
 `
 
 function App() {
+    const profileSection = useRef()
+
     const { t } = useTranslation()
 
     return (
         <>
             <GlobalStyle />
-            <Header />
+            <Header profileSection={profileSection} />
             <main>
-                <section>
-                    <ProfileImg />
-                    <h1>Quirax Lee</h1>
-                </section>
-                <section id='profile'>
+                <FrontSection />
+                <section
+                    id='profile'
+                    ref={profileSection}>
                     <h2>{t('profile')}</h2>
                     <MarkdownFileRenderer src={test_md} />
                 </section>
@@ -73,6 +81,15 @@ function App() {
                 <section>
                     <button>{t('reject-collect-email')}</button>
                     <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
+                    <p>
+                        Profile image &copy; 2020{' '}
+                        <a
+                            href='https://twitter.com/Kim_Zoooin'
+                            target='_blank'>
+                            Kim Zooin
+                        </a>
+                        .
+                    </p>
                 </section>
             </footer>
         </>
