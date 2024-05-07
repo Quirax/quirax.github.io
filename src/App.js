@@ -81,6 +81,15 @@ function App() {
                 <section>
                     <button>{t('reject-collect-email')}</button>
                     <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
+                    <p>
+                        Profile image &copy; 2020{' '}
+                        <a
+                            href='https://twitter.com/Kim_Zoooin'
+                            target='_blank'>
+                            Kim Zooin
+                        </a>
+                        .
+                    </p>
                 </section>
             </footer>
         </>
