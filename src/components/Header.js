@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components'
 import { ProfileImg } from './ProfileImg'
 import { MaterialIcon, InlinedButton as Button, buttonStyle } from './common'
 import { LanguageSelector } from './LanguageSelector'
+import { headerHeight } from '../GlobalStyle'
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -74,7 +75,7 @@ const MenuButton = styled(Button)`
     }
 `
 
-export function Header({ profileSection, ...props }) {
+export function Header({ ...props }) {
     const { t } = useTranslation()
 
     const [showHeader, setShowHeader] = useState(false)
@@ -93,13 +94,7 @@ export function Header({ profileSection, ...props }) {
         }
 
         const onScroll = () => {
-            if (!profileSection.current) {
-                setShowHeader(false)
-                onClickWindow()
-                return
-            }
-
-            let newShowHeader = profileSection.current.getBoundingClientRect().top <= 0
+            let newShowHeader = window.scrollY > headerHeight
 
             if (newShowHeader !== showHeader) onClickWindow()
             setShowHeader(newShowHeader)
@@ -117,7 +112,7 @@ export function Header({ profileSection, ...props }) {
             window.removeEventListener('resize', onResize)
             window.removeEventListener('scroll', onScroll)
         }
-    }, [profileSection, showHeader])
+    }, [showHeader])
 
     const onClickMenuButton = (e) => {
         e.stopPropagation()

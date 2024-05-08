@@ -18,7 +18,7 @@ function App() {
     return (
         <>
             <GlobalStyle />
-            <Header profileSection={profileSection} />
+            <Header />
             <main>
                 <FrontSection />
                 <ContentSection
