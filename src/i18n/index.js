@@ -6,6 +6,9 @@ import { initReactI18next } from 'react-i18next'
 import en from './en.json'
 import ko from './ko.json'
 
+import test_md from '../docs/test.md'
+import ko_test_md from '../docs/ko_test.md'
+
 i18n.use(initReactI18next) // Transfer i18n to react-i18next
     .init({
         debug: true, // TODO: reset by comment out
@@ -23,3 +26,10 @@ i18n.use(initReactI18next) // Transfer i18n to react-i18next
     })
 
 export default i18n
+
+export const srcObj = {
+    profile: {
+        en: test_md,
+        ko: ko_test_md,
+    },
+}
