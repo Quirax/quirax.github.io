@@ -5,7 +5,6 @@ import styled, { css } from 'styled-components'
 import { ProfileImg } from './ProfileImg'
 import { MaterialIcon, InlinedButton as Button, buttonStyle } from './common'
 import { LanguageSelector } from './LanguageSelector'
-import { headerHeight } from '../App'
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -18,6 +17,7 @@ const StyledHeader = styled.header`
     color: var(--header-color);
     top: calc(var(--header-height) * -1);
     transition: top 500ms;
+    box-sizing: border-box;
 
     &[open] {
         top: 0;
@@ -99,7 +99,7 @@ export function Header({ profileSection, ...props }) {
                 return
             }
 
-            let newShowHeader = profileSection.current.getBoundingClientRect().top - headerHeight <= 0
+            let newShowHeader = profileSection.current.getBoundingClientRect().top <= 0
 
             if (newShowHeader !== showHeader) onClickWindow()
             setShowHeader(newShowHeader)
