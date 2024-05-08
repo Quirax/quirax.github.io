@@ -32,4 +32,12 @@ export const srcObj = {
         en: test_md,
         ko: ko_test_md,
     },
+    portfolio: {
+        en: test_md,
+        ko: ko_test_md,
+    },
+    project: {
+        en: test_md,
+        ko: ko_test_md,
+    },
 }

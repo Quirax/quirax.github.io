@@ -6,6 +6,8 @@ import { Header } from './components/Header'
 import { createGlobalStyle } from 'styled-components'
 import { FrontSection } from './components/FrontSection'
 import { useRef } from 'react'
+import { ContentSection } from './components/ContentSection'
+import { srcObj } from './i18n'
 
 export const headerHeight = 64
 
@@ -52,20 +54,22 @@ function App() {
             <Header profileSection={profileSection} />
             <main>
                 <FrontSection />
-                <section
+                <ContentSection
                     id='profile'
-                    ref={profileSection}>
-                    <h2>{t('profile')}</h2>
-                    <MarkdownFileRenderer src={test_md} />
-                </section>
-                <section id='portfolio'>
-                    <h2>{t('portfolio')}</h2>
-                    <MarkdownFileRenderer src={test_md} />
-                </section>
-                <section id='project'>
-                    <h2>{t('project')}</h2>
-                    <MarkdownFileRenderer src={test_md} />
-                </section>
+                    referer={profileSection}
+                    title={t('profile')}
+                    srcObj={srcObj.profile}
+                />
+                <ContentSection
+                    id='portfolio'
+                    title={t('portfolio')}
+                    srcObj={srcObj.portfolio}
+                />
+                <ContentSection
+                    id='project'
+                    title={t('project')}
+                    srcObj={srcObj.project}
+                />
             </main>
             <footer>
                 <section>
