@@ -12,7 +12,7 @@ const Section = styled.section`
     }
 `
 
-export const ContentSection = withTranslation()(({ i18n, title, srcObj, referer, ...props }) => {
+export const ContentSection = withTranslation()(({ i18n, t, tReady, title, srcObj, referer, ...props }) => {
     return (
         <Section
             {...props}
