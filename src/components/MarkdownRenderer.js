@@ -3,29 +3,13 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { useEffect, useState } from 'react'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-const MarkdownStyle = styled.div`
+const MarkdownStyle = styled.div.attrs({
+    className: 'markdown-body',
+})`
     font-size: 1rem;
-    line-height: 2.5rem;
-`
-
-const InlineCode = styled.code`
-`
-
-const Pre = styled.pre`
-    background: #e5eaee;
-    padding: 2rem;
-    line-height: 1.5rem;
-    margin: 2rem auto;
-
-    /* text wrapping: https://stackoverflow.com/questions/248011 */
-    white-space: pre-wrap;
-    word-wrap: break-word;
-`
-
-const BlockQuote = styled.blockquote`
-    padding: 1rem;
-    border: 1px dashed black;
 `
 
 function lf2br(str, idx = 0) {
@@ -40,12 +24,25 @@ export const MarkdownRenderer = ({ children }) => (
             remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
             rehypePlugins={[rehypeRaw]}
             components={{
-                code: ({ node, ...props }) => <InlineCode {...props} />,
-                pre: ({ node, children, ...props }) => (
-                    <Pre {...props}>
-                        <code>{children.props.children}</code>
-                    </Pre>
-                ), // pre의 child로 code가 생기는 현상 방지
+                code: ({ node, children, ...props }) => <code {...props}>{children}</code>,
+                pre: ({ node, children, style, ...props }) => {
+                    const match = /language-(\w+)/.exec(children.props.className)
+                    return match ? (
+                        <SyntaxHighlighter
+                            language={match[1]}
+                            codeTagProps={props}
+                            style={githubGist}
+                            customStyle={{
+                                padding: '',
+                                color: '',
+                                backgroundColor: '',
+                            }}>
+                            {String(children.props.children).replace(/\n$/, '')}
+                        </SyntaxHighlighter>
+                    ) : (
+                        <pre>{children.props.children}</pre>
+                    )
+                }, // pre의 child로 code가 생기는 현상 방지
                 p: ({ node, children, ...props }) => {
                     let refined_children = children
 
@@ -67,7 +64,6 @@ export const MarkdownRenderer = ({ children }) => (
 
                     return <p {...props}>{refined_children}</p>
                 },
-                blockquote: ({ node, ...props }) => <BlockQuote {...props} />,
             }}>
             {children}
         </ReactMarkdown>

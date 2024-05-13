@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import 'material-icons/iconfont/material-icons.css'
+import 'github-markdown-css/github-markdown-light.css'
 
 import App from './App'
 import reportWebVitals from './reportWebVitals'
@@ -16,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
     }
 
-    body {
+    body, .markdown-body {
         margin: 0;
         font-family: D2Coding, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
         -webkit-font-smoothing: antialiased;
@@ -25,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
 
     code {
         font-family: D2Coding, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
+
+    .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+        border: none;
     }
 `
 

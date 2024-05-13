@@ -33,13 +33,13 @@ export const GlobalStyle = createGlobalStyle`
         --modal-background: var(--palette-semilight);
         --modal-active-background: var(--palette-light);
         --modal-button-width: 128px;
-        --modal-button-font-size: 16px;
+        --modal-button-font-size: 1em;
 
         --front-background: var(--palette-normal);
         --front-color: var(--palette-normal-text);
-        --front-font-size: 32px;
+        --front-font-size: 4em;
 
-        --content-title-font-size: 36px;
+        --content-title-font-size: 3em;
         --content-title-color: var(--palette-normal);
         --content-margin: 16px;
     }
