@@ -4,9 +4,10 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { useEffect, useState } from 'react'
 
-const MarkdownStyle = styled.div`
+const MarkdownStyle = styled.div.attrs({
+    className: 'markdown-body',
+})`
     font-size: 1rem;
-    line-height: 2.5rem;
 `
 
 const InlineCode = styled.code`
