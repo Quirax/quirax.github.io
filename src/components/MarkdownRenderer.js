@@ -4,28 +4,12 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { useEffect, useState } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { github, githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 const MarkdownStyle = styled.div.attrs({
     className: 'markdown-body',
 })`
     font-size: 1rem;
-`
-
-const Pre = styled.pre`
-    background: #e5eaee;
-    padding: 2rem;
-    line-height: 1.5rem;
-    margin: 2rem auto;
-
-    /* text wrapping: https://stackoverflow.com/questions/248011 */
-    white-space: pre-wrap;
-    word-wrap: break-word;
-`
-
-const BlockQuote = styled.blockquote`
-    padding: 1rem;
-    border: 1px dashed black;
 `
 
 function lf2br(str, idx = 0) {
@@ -80,7 +64,6 @@ export const MarkdownRenderer = ({ children }) => (
 
                     return <p {...props}>{refined_children}</p>
                 },
-                // blockquote: ({ node, ...props }) => <bl {...props} />,
             }}>
             {children}
         </ReactMarkdown>

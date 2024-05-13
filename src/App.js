@@ -1,9 +1,5 @@
-import test_md from './docs/test.md'
-
 import { useTranslation } from 'react-i18next'
-import { MarkdownFileRenderer } from './components/MarkdownRenderer'
 import { Header } from './components/Header'
-import { createGlobalStyle } from 'styled-components'
 import { FrontSection } from './components/FrontSection'
 import { useRef } from 'react'
 import { ContentSection } from './components/ContentSection'

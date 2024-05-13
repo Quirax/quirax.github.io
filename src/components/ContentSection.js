@@ -1,4 +1,4 @@
-import { useTranslation, withTranslation } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { MarkdownFileRenderer } from './MarkdownRenderer'
 import styled from 'styled-components'
 import { headerHeight } from '../GlobalStyle'
