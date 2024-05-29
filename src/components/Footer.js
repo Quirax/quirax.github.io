@@ -1,5 +1,11 @@
 import { useTranslation } from 'react-i18next'
-import { H2, Section } from './common'
+import { H2, Section, InlinedButton } from './common'
+import styled from 'styled-components'
+
+const Button = styled(InlinedButton)`
+    width: initial;
+    padding: 0;
+`
 
 export function Footer() {
     const { t } = useTranslation()
@@ -19,7 +25,7 @@ export function Footer() {
                 </ul>
             </Section>
             <Section>
-                <button>{t('reject-collect-email')}</button>
+                <Button>{t('reject-collect-email')}</Button>
                 <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
                 <p>
                     Profile image &copy; 2020{' '}
