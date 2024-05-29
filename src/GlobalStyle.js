@@ -42,5 +42,8 @@ export const GlobalStyle = createGlobalStyle`
         --content-title-font-size: 3em;
         --content-title-color: var(--palette-normal);
         --content-margin: 16px;
+
+        --final-section-background: var(--palette-normal);
+        --final-section-color: var(--palette-normal-text);
     }
 `

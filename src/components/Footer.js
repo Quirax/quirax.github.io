@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { H2, Section, InlinedButton } from './common'
+import { H2, Section, InlinedButton, Link } from './common'
 import styled from 'styled-components'
 
 const Button = styled(InlinedButton)`
@@ -16,6 +16,20 @@ const UL = styled.ul`
     }
 `
 
+const FinalSection = styled.section`
+    background: var(--final-section-background);
+    color: var(--final-section-color);
+    padding: var(--content-margin);
+`
+
+const FinalLink = styled(Link)`
+    color: var(--final-section-color);
+
+    &:focus, &:focus-visible {
+        outline-color: var(--final-section-color);
+    }
+`
+
 export function Footer() {
     const { t } = useTranslation()
 
@@ -26,27 +40,27 @@ export function Footer() {
                 <UL>
                     <li>
                         GitHub Issues:{' '}
-                        <a href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</a>
+                        <Link href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</Link>
                     </li>
                     <li>
                         {t('email')}: quiraxical <i>at</i> gmail.com ({t('email-instruction')})
                     </li>
                 </UL>
             </Section>
-            <Section>
+            <FinalSection>
                 <Button>{t('reject-collect-email')}</Button>
                 <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
                 <p>
                     Profile image &copy; 2020{' '}
-                    <a
+                    <FinalLink
                         href='https://twitter.com/Kim_Zoooin'
                         target='_blank'
                         rel='noreferrer noopener'>
                         Kim Zooin
-                    </a>
+                    </FinalLink>
                     .
                 </p>
-            </Section>
+            </FinalSection>
         </footer>
     )
 }

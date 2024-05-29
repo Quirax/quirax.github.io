@@ -38,3 +38,19 @@ export const H2 = styled.h2`
     font-size: var(--content-title-font-size);
     color: var(--content-title-color);
 `
+
+export const Link = styled.a`
+    background-color: transparent;
+    color: #0969da;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:focus, &:focus-visible {
+        outline-offset: 0;
+        outline: 2px solid #0969da;
+        box-shadow: none;
+    }
+`
