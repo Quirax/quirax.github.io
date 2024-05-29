@@ -8,13 +8,15 @@ export function Footer() {
         <footer>
             <Section>
                 <H2>{t('contact-us')}</H2>
-                <p>
-                    GitHub Issues:{' '}
-                    <a href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</a>
-                </p>
-                <p>
-                    {t('email')}: quiraxical <i>at</i> gmail.com ({t('email-instruction')})
-                </p>
+                <ul>
+                    <li>
+                        GitHub Issues:{' '}
+                        <a href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</a>
+                    </li>
+                    <li>
+                        {t('email')}: quiraxical <i>at</i> gmail.com ({t('email-instruction')})
+                    </li>
+                </ul>
             </Section>
             <Section>
                 <button>{t('reject-collect-email')}</button>
