@@ -40,7 +40,12 @@ export function Footer() {
                 <UL>
                     <li>
                         GitHub Issues:{' '}
-                        <Link href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</Link>
+                        <Link
+                            href='https://github.com/Quirax/quirax.github.io/issues'
+                            target='_blank'
+                            rel='noreferrer noopener'>
+                            Quirax/quirax.github.io
+                        </Link>
                     </li>
                     <li>
                         {t('email')}: quiraxical <i>at</i> gmail.com ({t('email-instruction')})
