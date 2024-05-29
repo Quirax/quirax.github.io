@@ -1,11 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { H2, Section, InlinedButton, Link } from './common'
+import { H2, Section, Link } from './common'
 import styled from 'styled-components'
-
-const Button = styled(InlinedButton)`
-    width: initial;
-    padding: 0;
-`
 
 const UL = styled.ul`
     padding: 0;
@@ -27,6 +22,22 @@ const FinalLink = styled(Link)`
 
     &:focus, &:focus-visible {
         outline-color: var(--final-section-color);
+    }
+`
+
+const Details = styled.details`
+    width: fit-content;
+    padding-left: var(--final-section-detail-margin);
+
+    summary {
+        cursor: pointer;
+        user-select: none;
+        display: block;
+        margin-left: calc(var(--final-section-detail-margin) * -1);
+    }
+
+    &[open] summary {
+        margin-bottom: var(--final-section-detail-margin);
     }
 `
 
@@ -53,7 +64,10 @@ export function Footer() {
                 </UL>
             </Section>
             <FinalSection>
-                <Button>{t('reject-collect-email')}</Button>
+                <Details>
+                    <summary>{t('reject-collect-email')}</summary>
+                    asdfasdf
+                </Details>
                 <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
                 <p>
                     Profile image &copy; 2020{' '}

@@ -45,5 +45,6 @@ export const GlobalStyle = createGlobalStyle`
 
         --final-section-background: var(--palette-normal);
         --final-section-color: var(--palette-normal-text);
+        --final-section-detail-margin: 1em;
     }
 `
