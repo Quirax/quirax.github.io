@@ -6,6 +6,7 @@
     "email": "Email address",
     "email-instruction": "replaced 'at' to @, without whitespace",
     "reject-collect-email": "Rejection of E-mail Collection",
+    "reject-collect-email-details": "Please note that e-mail addresses posted on this site are refused to be collected without permission using e-mail collection programs or other technical devices, and that violations thereof will be criminally punished under the Information and Communication Network Act.",
     "all-rights-reserved": "All rights reserved.",
     "profile-img": "A profile image of Quirax",
     "language-select": "Language"

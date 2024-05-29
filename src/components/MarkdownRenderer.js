@@ -12,11 +12,19 @@ const MarkdownStyle = styled.div.attrs({
     font-size: 1rem;
 `
 
-function lf2br(str, idx = 0) {
-    let ret = str.split('\n').flatMap((v, i) => [v, <br key={idx + i} />])
-    ret.pop()
-    return ret
-}
+const Wrapper = styled.span`
+    white-space: pre-wrap;
+`
+
+const autoWrapper = (children) =>
+    Array(children)
+        .flat()
+        .map((v, i) => {
+            if (typeof v != 'string') return v
+            if (v === '\n') return null
+            return <Wrapper key={i}>{v}</Wrapper>
+        })
+        .filter((v) => v !== null)
 
 export const MarkdownRenderer = ({ children }) => (
     <MarkdownStyle>
@@ -43,27 +51,8 @@ export const MarkdownRenderer = ({ children }) => (
                         <pre>{children.props.children}</pre>
                     )
                 }, // pre의 child로 code가 생기는 현상 방지
-                p: ({ node, children, ...props }) => {
-                    let refined_children = children
-
-                    switch (typeof children) {
-                        case 'string':
-                            refined_children = lf2br(children)
-                            break
-                        case 'object':
-                            if (children instanceof Array) {
-                                refined_children = children.flatMap((v, i) =>
-                                    typeof v === 'string' ? lf2br(v, i * 10000000) : [v]
-                                )
-                                break
-                            }
-                            break
-                        default:
-                            console.error('Found new type of children of `p` node', children)
-                    }
-
-                    return <p {...props}>{refined_children}</p>
-                },
+                p: ({ node, children, ...props }) => <p {...props}>{autoWrapper(children)}</p>,
+                li: ({ node, children, ...props }) => <li {...props}>{autoWrapper(children)}</li>,
             }}>
             {children}
         </ReactMarkdown>
