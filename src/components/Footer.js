@@ -7,6 +7,15 @@ const Button = styled(InlinedButton)`
     padding: 0;
 `
 
+const UL = styled.ul`
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+`
+
 export function Footer() {
     const { t } = useTranslation()
 
@@ -14,7 +23,7 @@ export function Footer() {
         <footer>
             <Section>
                 <H2>{t('contact-us')}</H2>
-                <ul>
+                <UL>
                     <li>
                         GitHub Issues:{' '}
                         <a href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</a>
@@ -22,7 +31,7 @@ export function Footer() {
                     <li>
                         {t('email')}: quiraxical <i>at</i> gmail.com ({t('email-instruction')})
                     </li>
-                </ul>
+                </UL>
             </Section>
             <Section>
                 <Button>{t('reject-collect-email')}</Button>
