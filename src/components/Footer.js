@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next'
+import { H2, Section } from './common'
 
 export function Footer() {
     const { t } = useTranslation()
 
     return (
         <footer>
-            <section>
-                <h2>{t('contact-us')}</h2>
+            <Section>
+                <H2>{t('contact-us')}</H2>
                 <p>
                     GitHub Issues:{' '}
                     <a href='https://github.com/Quirax/quirax.github.io/issues'>Quirax/quirax.github.io</a>
@@ -14,8 +15,8 @@ export function Footer() {
                 <p>
                     {t('email')}: quiraxical <i>at</i> gmail.com ({t('email-instruction')})
                 </p>
-            </section>
-            <section>
+            </Section>
+            <Section>
                 <button>{t('reject-collect-email')}</button>
                 <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
                 <p>
@@ -28,7 +29,7 @@ export function Footer() {
                     </a>
                     .
                 </p>
-            </section>
+            </Section>
         </footer>
     )
 }
