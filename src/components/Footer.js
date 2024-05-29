@@ -66,7 +66,7 @@ export function Footer() {
             <FinalSection>
                 <Details>
                     <summary>{t('reject-collect-email')}</summary>
-                    asdfasdf
+                    {t('reject-collect-email-details')}
                 </Details>
                 <p>&copy; 2024 Quirax Lee. {t('all-rights-reserved')}</p>
                 <p>
