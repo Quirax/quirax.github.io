@@ -6,8 +6,6 @@ import { initReactI18next } from 'react-i18next'
 import en from './en.json'
 import ko from './ko.json'
 
-import test_md from '../docs/test.md'
-import ko_test_md from '../docs/ko_test.md'
 import profile_ko from '../docs/profile_ko.md'
 import profile_en from '../docs/profile_en.md'
 import portfolio_ko from '../docs/portfolio_ko.md'
