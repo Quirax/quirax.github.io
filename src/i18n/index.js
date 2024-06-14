@@ -8,6 +8,12 @@ import ko from './ko.json'
 
 import test_md from '../docs/test.md'
 import ko_test_md from '../docs/ko_test.md'
+import profile_ko from '../docs/profile_ko.md'
+import profile_en from '../docs/profile_en.md'
+import portfolio_ko from '../docs/portfolio_ko.md'
+import portfolio_en from '../docs/portfolio_en.md'
+import project_ko from '../docs/project_ko.md'
+import project_en from '../docs/project_en.md'
 
 i18n.use(initReactI18next) // Transfer i18n to react-i18next
     .init({
@@ -29,15 +35,15 @@ export default i18n
 
 export const srcObj = {
     profile: {
-        en: test_md,
-        ko: ko_test_md,
+        en: profile_en,
+        ko: profile_ko,
     },
     portfolio: {
-        en: test_md,
-        ko: ko_test_md,
+        en: portfolio_en,
+        ko: portfolio_ko,
     },
     project: {
-        en: test_md,
-        ko: ko_test_md,
+        en: project_en,
+        ko: project_ko,
     },
 }
