@@ -13,3 +13,4 @@
 ## 개인 프로젝트
 
 -   프로필 페이지 _#js_ _#react_ (2024년, [GitHub](https://github.com/Quirax/quirax.github.io))
+-   밴드를 위한 자캐 커뮤니티 편파 탐색기: 커뮤 내 게시물과 반응 데이터를 분석하여 특정 자캐의 편파 여부를 진단하고, 공정한 운영을 돕는 도구 _#js_ _#react_ _#webextension_ _#webpack_ (2024년, [GitHub](https://github.com/Quirax/OCTrollFinder4Band), [Chrome 웹 스토어](https://chromewebstore.google.com/detail/djkoblkifcbolejdhilafnnhblnbibid))

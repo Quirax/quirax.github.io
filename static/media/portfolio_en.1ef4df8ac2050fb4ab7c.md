@@ -13,3 +13,4 @@
 ## Personal Projects
 
 -   The profile page _#js_ _#react_ (2024, [GitHub](https://github.com/Quirax/quirax.github.io))
+-   Original Character Community Troll Finder for Band: A chrome extension to find trolls in OC community on Band _#js_ _#react_ _#webextension_ _#webpack_ (2024, [GitHub](https://github.com/Quirax/OCTrollFinder4Band), [Chrome 웹 스토어](https://chromewebstore.google.com/detail/djkoblkifcbolejdhilafnnhblnbibid))
