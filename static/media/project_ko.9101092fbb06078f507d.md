@@ -3,6 +3,7 @@
 (저장소 이름순 정렬)
 
 -   [quirax.github.io](https://github.com/Quirax/quirax.github.io): 프로필 페이지
+-   [밴드를 위한 자캐 커뮤니티 편파 탐색기](https://github.com/Quirax/OCTrollFinder4Band): 커뮤 내 게시물과 반응 데이터를 분석하여 특정 자캐의 편파 여부를 진단하고, 공정한 운영을 돕는 도구 (현재 유지보수 단계)
 
 ## 완료
 
@@ -23,5 +24,6 @@
 
 -   [community-gadget-band](https://github.com/Quirax/community-gadget-band): 밴드 커뮤니티를 위한 소도구 사이트 (API quota 문제로 중단)
 -   [DiscordBot-StudyBetterThanYou](https://github.com/Quirax/DiscordBot-StudyBetterThanYou): [benjamonnguyen/Pomomo](https://github.com/benjamonnguyen/Pomomo) 기반 뽀모도로 디스코드 봇 '너보다 공부 잘해' (기능 구현 문제로 중단)
+-   [Band PDF Export](https://github.com/Quirax/band-pdf-export): 밴드 콘텐츠를 PDF로 내보내는 도구 (페이지 디자인이 확정되지 않아 중단)
 
 </details>
