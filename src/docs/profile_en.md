@@ -10,6 +10,12 @@
     -   Maintenanced web and application of Ocean Cloud
     -   Developed an application of Urban Knights
     -   Developed and maintenanced semiconductor design tools of Samsung Electronics
+-   Postech (Oct. 2025. - _current_): Developed a frontend software for Point-On-Sale devices and KIOSK of Wando Marine Healing Center _#react_ _#electron_ _#vite_ _#figma_
+    -   Developed integration with hardware such as barcode scanner, thermal printer, ID card scanner, etc. _#serialport_ _#koffi_
+    -   Developed integration with back-end API _#axios_ _#tanstack-query_
+    -   Configured global state management system _#zustand_
+    -   Developed integration with VAN system of NICE I&T
+    -   Created private npm packages that 모으다 common functions such as VAN integration, hardware integration, etc.
 
 ## Awards and Recognitions
 
