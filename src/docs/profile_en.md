@@ -15,7 +15,7 @@
     -   Developed integration with back-end API _#axios_ _#tanstack-query_
     -   Configured global state management system _#zustand_
     -   Developed integration with VAN system of NICE I&T
-    -   Created private npm packages that 모으다 common functions such as VAN integration, hardware integration, etc.
+    -   Created private npm packages that gathers common functions such as VAN integration, hardware integration, etc.
 -   [Ineeji](https://www.ineeji.com/en/) (Apr. 2026. - _current_)
 
 ## Awards and Recognitions
