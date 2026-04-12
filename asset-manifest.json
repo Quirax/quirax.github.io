@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fb515c69.css",
-    "main.js": "/static/js/main.46e37b7c.js",
+    "main.js": "/static/js/main.4db53837.js",
     "static/js/206.6cb2a312.chunk.js": "/static/js/206.6cb2a312.chunk.js",
     "static/media/profile.png": "/static/media/profile.d3b20d41acb3fcdd2c5b.png",
     "static/media/material-icons-two-tone.woff": "/static/media/material-icons-two-tone.3baa5b8f3469222b822d.woff",
@@ -16,14 +16,14 @@
     "static/media/material-icons.woff2": "/static/media/material-icons.0c35d18bf06992036b69.woff2",
     "static/media/project_ko.md": "/static/media/project_ko.7592bd4f7a2358091aa4.md",
     "static/media/project_en.md": "/static/media/project_en.4d829e54be57b897b0a1.md",
-    "static/media/profile_en.md": "/static/media/profile_en.4cbdd14296a68c0d4afd.md",
+    "static/media/profile_en.md": "/static/media/profile_en.31e7a014edcbdaf9d301.md",
     "index.html": "/index.html",
-    "static/media/profile_ko.md": "/static/media/profile_ko.97537c5903e69a1830bf.md",
+    "static/media/profile_ko.md": "/static/media/profile_ko.671a8c8257f4d4f340d4.md",
     "static/media/portfolio_ko.md": "/static/media/portfolio_ko.05c3e95a2ba777ef0584.md",
     "static/media/portfolio_en.md": "/static/media/portfolio_en.9c4cd757620cbfbca181.md"
   },
   "entrypoints": [
     "static/css/main.fb515c69.css",
-    "static/js/main.46e37b7c.js"
+    "static/js/main.4db53837.js"
   ]
 }
